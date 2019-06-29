@@ -59,6 +59,7 @@ export default {
                 name: 'UserInfo',
                 params: { userSelected: data },
             });
+            localStorage.setItem('userSelected', JSON.stringify(data));
         },
     },
 };

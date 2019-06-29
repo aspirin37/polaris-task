@@ -55,7 +55,7 @@ export default {
     props: {
         userSelected: {
             type: Object,
-            default: null,
+            default: () => JSON.parse(localStorage.getItem('userSelected')),
         },
     },
     data: () => ({
