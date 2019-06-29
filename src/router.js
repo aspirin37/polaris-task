@@ -17,6 +17,7 @@ export default new Router({
             path: '/user-info',
             name: 'UserInfo',
             component: UserInfo,
+            props: true,
         },
         {
             path: '*',

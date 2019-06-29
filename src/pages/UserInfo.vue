@@ -42,7 +42,6 @@
 <script>
 import { DxForm, DxGroupItem, DxSimpleItem } from 'devextreme-vue/form';
 import { DxTextArea } from 'devextreme-vue/text-area';
-import { mapState } from 'vuex';
 
 export default {
     name: 'UserInfo',
@@ -53,14 +52,17 @@ export default {
         DxSimpleItem,
         DxTextArea,
     },
+    props: {
+        userSelected: {
+            type: Object,
+            default: null,
+        },
+    },
     data: () => ({
         eyeColorOptions: {
             items: ['blue', 'green', 'brown'],
         },
     }),
-    computed: {
-        ...mapState(['userSelected']),
-    },
     created() {
         if (!this.userSelected) {
             this.$router.push('user-list');
@@ -69,7 +71,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .first-group,
 .second-group {
     padding: 20px;

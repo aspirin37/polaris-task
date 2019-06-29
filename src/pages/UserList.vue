@@ -55,8 +55,10 @@ export default {
             this.users = response.data;
         },
         showUserInfo({ data }) {
-            this.$store.commit('setUserSelected', data);
-            this.$router.push('user-info');
+            this.$router.push({
+                name: 'UserInfo',
+                params: { userSelected: data },
+            });
         },
     },
 };
